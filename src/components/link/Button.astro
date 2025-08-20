@@ -16,12 +16,12 @@ const platformData = socialPlatforms[platformKey] ?? {
   href={platformData.href}
   target="_blank"
   rel="noopener noreferrer"
-  class={`relative w-full flex justify-center gap-2 px-5 py-3 rounded-full transition-colors ${platformKey}`}
+  class={`button relative w-full flex justify-center gap-2 px-5 py-3 rounded-full transition-colors ${platformKey}`}
   {...props}
 >
   <span
     aria-hidden="true"
-    class={`absolute inset-0 rounded-full transition-colors ${platformKey}`}
+    class={`absolute inset-0 rounded-full transition-colors button ${platformKey}`}
     style="filter: blur(3px);"></span>
 
   <span class="relative flex items-center gap-2 text-white">
@@ -33,13 +33,25 @@ const platformData = socialPlatforms[platformKey] ?? {
 </a>
 
 <style>
-  /* Background colors for each platform */
-  span.youtube {
-    background-color: #ff0000;
+  a.button {
+    transition: opacity 0.3s ease;
   }
 
-  span.facebook {
-    background-color: #1877f2;
+  a.button:hover {
+    opacity: 0.6;
+  }
+
+  /* 
+    Add class "span.[your-service-name]" with its background
+    color or gradient if your button was not defined at all
+  */
+
+  span.website {
+    background-color: #50c2be;
+  }
+
+  span.youtube {
+    background-color: #ff0000;
   }
 
   span.instagram {
@@ -53,29 +65,11 @@ const platformData = socialPlatforms[platformKey] ?? {
     );
   }
 
+  span.facebook {
+    background-color: #1877f2;
+  }
+
   span.threads {
     background-color: black;
-  }
-
-  span.website {
-    background-color: #50c2be;
-  }
-
-  /* Shared transition effect for <a> elements */
-  a.youtube,
-  a.facebook,
-  a.instagram,
-  a.threads,
-  a.website {
-    transition: opacity 0.3s ease;
-  }
-
-  /* Hover opacity */
-  a.youtube:hover,
-  a.facebook:hover,
-  a.instagram:hover,
-  a.threads:hover,
-  a.website:hover {
-    opacity: 0.6;
   }
 </style>
