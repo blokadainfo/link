@@ -37,7 +37,7 @@ import Background from '../components/Background.astro';
 
   @keyframes fadeIn {
     from {
-      opacity: 0;
+      opacity: 0.0001; /* weird Chromium bug if it's 0 */
     }
     to {
       opacity: 1;
