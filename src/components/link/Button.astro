@@ -16,7 +16,7 @@ const platformData = socialPlatforms[platformKey] ?? {
   href={platformData.href}
   target="_blank"
   rel="noopener noreferrer"
-  class={`button relative w-full flex justify-center gap-2 px-5 py-3 rounded-full transition-colors ${platformKey}`}
+  class={`button relative w-full flex gap-2 px-5 py-3 rounded-full transition-colors ${platformKey}`}
   {...props}
 >
   <span
@@ -24,11 +24,13 @@ const platformData = socialPlatforms[platformKey] ?? {
     class={`absolute inset-0 rounded-full transition-colors button ${platformKey}`}
     style="filter: blur(3px);"></span>
 
-  <span class="relative flex items-center gap-2 text-white">
-    {platformData.icon && <platformData.icon class="w-8 h-8" />}
+  <span
+    class="relative w-full flex justify-between items-center gap-2 text-white"
+  >
     <span class="text-xl min-[360px]:text-3xl font-bold select-none">
       {platformData.text}
     </span>
+    {platformData.icon && <platformData.icon class="w-8 h-8" />}
   </span>
 </a>
 
