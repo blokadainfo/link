@@ -18,7 +18,7 @@ You can easily fork and customize this page, the entire thing is quite simple re
 
 Check out the [`site.ts`](/src/config/site.ts) config file, where all the recommended customizable properties are clearly listed.
 
-The first `<svg>` you’ll stumble upon in [`Background.astro`](/src/components/Background.astro) is the logo displayed in the upper-left corner of the webpage. You can delete it or replace it with something else.
+The first `<svg>` you’ll stumble upon in [`Header.astro`](/src/components/Header.astro) is the logo displayed in the upper-left corner of the webpage. You can delete it or replace it with something else.
 
 ## License
 

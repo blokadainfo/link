@@ -1,25 +1,6 @@
 <!-- Background -->
 <div class="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10">
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 425.2 425.2"
-    class="fixed top-4 left-4 size-20 sm:size-24 z-10 fill-white"
-  >
-    <g>
-      <circle cx="196.49" cy="89.83" r="31.9"></circle>
-      <path
-        d="M155.57,367.26H56.79V260.26h40.02c32.45,0,58.75,26.3,58.75,58.75V367.26z"
-      ></path>
-      <path
-        d="M95.89,245.09h-39.1v-78.2h39.1c21.59,0,39.1,17.5,39.1,39.1S117.49,245.09,95.89,245.09z"
-      ></path>
-      <polygon points="368.4,62.39 266.55,112.62 266.55,304.86 368.4,355.13"
-      ></polygon>
-      <polygon points="161.17,164.59 161.25,252.9 245.28,294.37 245.28,123.11"
-      ></polygon>
-    </g>
-  </svg>
-  <svg
     viewBox="0 0 100 100"
     preserveAspectRatio="xMidYMid slice"
     class="w-full h-full block pointer-events-none"
@@ -259,69 +240,3 @@
   </svg>
 </div>
 <!-- Foreground -->
-
-<div class="fixed top-10 right-6 z-10">
-  <svg
-    id="share"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    transform="matrix(-1, 0, 0, 1, 0, 0)"
-    style="transition: stroke 0.3s ease, opacity 0.3s ease;"
-    class="size-10 sm:size-12 cursor-pointer stroke-white hover:stroke-gray-700 transition-colors"
-  >
-    <g>
-      <path
-        d="M20.7914 12.6075C21.0355 12.3982 21.1575 12.2936 21.2023 12.1691C21.2415 12.0598 21.2415 11.9403 21.2023 11.831C21.1575 11.7065 21.0355 11.6019 20.7914 11.3926L12.3206 4.13202C11.9004 3.77182 11.6903 3.59172 11.5124 3.58731C11.3578 3.58348 11.2101 3.6514 11.1124 3.77128C11 3.90921 11 4.18595 11 4.73942V9.03468C8.86532 9.40813 6.91159 10.4898 5.45971 12.1139C3.87682 13.8846 3.00123 16.176 3 18.551V19.163C4.04934 17.8989 5.35951 16.8766 6.84076 16.166C8.1467 15.5395 9.55842 15.1684 11 15.0706V19.2607C11 19.8141 11 20.0909 11.1124 20.2288C11.2101 20.3487 11.3578 20.4166 11.5124 20.4128C11.6903 20.4084 11.9004 20.2283 12.3206 19.8681L20.7914 12.6075Z"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"></path>
-    </g>
-  </svg>
-</div>
-
-<script type="module">
-  const shareBtn = document.getElementById('share');
-
-  if (shareBtn) {
-    shareBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      navigator.clipboard
-        .writeText(window.location.origin)
-        .then(() => {
-          flashStroke('#22c55e');
-        })
-        .catch((err) => {
-          console.error('Copy failed', err);
-          flashStroke('#ef4444');
-        });
-    });
-
-    function flashStroke(color) {
-      const originalStroke = shareBtn.style.stroke || '#ffffff';
-
-      shareBtn.style.stroke = color;
-      shareBtn.style.opacity = '1';
-
-      setTimeout(() => {
-        shareBtn.style.stroke = originalStroke;
-        shareBtn.style.removeProperty('opacity');
-      }, 1000);
-    }
-  }
-</script>
-
-<style>
-  #share:hover {
-    opacity: 0.6;
-  }
-</style>
-
-<noscript>
-  <style>
-    #share {
-      display: none !important;
-    }
-  </style>
-</noscript>

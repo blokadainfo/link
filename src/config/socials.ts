@@ -3,6 +3,7 @@ import FacebookIcon from '../assets/icons/facebook.svg';
 import InstagramIcon from '../assets/icons/instagram.svg';
 import ThreadsIcon from '../assets/icons/threads.svg';
 import SiteIcon from '../assets/icons/generic-website.svg';
+import EmailIcon from '../assets/icons/email.svg';
 
 export interface PlatformData {
   href: string;
@@ -11,6 +12,11 @@ export interface PlatformData {
 }
 
 export const socialPlatforms: Record<string, PlatformData> = {
+  email: {
+    href: 'mailto:kontakt@blokada.info',
+    text: 'Email',
+    icon: EmailIcon,
+  },
   website: {
     href: 'https://www.blokada.info',
     text: 'Blokada INFO',

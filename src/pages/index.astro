@@ -1,8 +1,14 @@
 ---
 import Foreground from '../components/Foreground.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-  <Foreground />
+  <div>
+    <Header />
+    <Foreground />
+    <Footer />
+  </div>
 </Layout>

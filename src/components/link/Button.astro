@@ -27,7 +27,7 @@ const platformData = socialPlatforms[platformKey] ?? {
   <span
     class="relative w-full flex justify-between items-center gap-2 text-white"
   >
-    <span class="text-xl min-[360px]:text-3xl font-bold select-none">
+    <span class="text-xl min-[380px]:text-3xl font-bold select-none">
       {platformData.text}
     </span>
     {platformData.icon && <platformData.icon class="w-8 h-8" />}
@@ -71,7 +71,8 @@ const platformData = socialPlatforms[platformKey] ?? {
     background-color: #1877f2;
   }
 
-  span.threads {
+  span.threads,
+  span.email {
     background-color: black;
   }
 </style>

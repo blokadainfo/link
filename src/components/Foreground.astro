@@ -2,7 +2,7 @@
 import Button from './link/Button.astro';
 ---
 
-<div class="flex min-h-screen items-center justify-center">
+<div class="pb-5 flex items-center justify-center">
   <div class="mx-10 w-md sm:w-xl flex flex-col items-center gap-4">
     <p
       class="text-center text-balance text-lg sm:text-xl font-medium text-white select-none"
@@ -14,5 +14,13 @@ import Button from './link/Button.astro';
     <Button platform="instagram" />
     <Button platform="facebook" />
     <Button platform="threads" />
+    <!--
+      <p
+        class="text-center text-balance text-lg sm:text-xl font-medium text-white select-none"
+      >
+        Cenimo različita mišljenja, slobodno nam pošaljte mejl:
+      </p>
+    -->
+    <Button platform="email" />
   </div>
 </div>
