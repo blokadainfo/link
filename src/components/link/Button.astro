@@ -22,15 +22,23 @@ const platformData = socialPlatforms[platformKey] ?? {
   <span
     aria-hidden="true"
     class={`absolute inset-0 rounded-full transition-colors button ${platformKey}`}
-    style="filter: blur(3px);"></span>
+    style="filter: blur(1px);"
+  >
+  </span>
 
   <span
     class="relative w-full flex justify-between items-center gap-2 text-white"
   >
-    <span class="text-xl min-[380px]:text-3xl font-bold select-none">
+    <span class="text-[5cqw] min-[320px]:text-2xl font-bold select-none">
       {platformData.text}
     </span>
-    {platformData.icon && <platformData.icon class="w-8 h-8" />}
+    <div class="flex justify-center items-center w-6 min-[320px]:w-8">
+      {
+        platformData.icon && (
+          <platformData.icon class="size-6 min-[320px]:size-8" />
+        )
+      }
+    </div>
   </span>
 </a>
 

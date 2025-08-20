@@ -3,7 +3,7 @@ import FacebookIcon from '../assets/icons/facebook.svg';
 import InstagramIcon from '../assets/icons/instagram.svg';
 import ThreadsIcon from '../assets/icons/threads.svg';
 import SiteIcon from '../assets/icons/generic-website.svg';
-import EmailIcon from '../assets/icons/email.svg';
+import EmailIcon from '../assets/icons/email-alt.svg';
 
 export interface PlatformData {
   href: string;
@@ -33,7 +33,7 @@ export const socialPlatforms: Record<string, PlatformData> = {
     icon: InstagramIcon,
   },
   facebook: {
-    href: 'https://www.facebook.com/profile.php?id=61574500512561' /* URL NEEDS TO BE CHANGED */,
+    href: 'https://www.facebook.com/blokadainfo',
     text: 'Facebook',
     icon: FacebookIcon,
   },
