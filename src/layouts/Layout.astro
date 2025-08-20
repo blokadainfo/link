@@ -6,14 +6,18 @@ import Background from '../components/Background.astro';
 ---
 
 <!doctype html>
-<html lang="sr">
+<html lang={siteMeta.locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href={siteMeta.favicon} />
     <title>{siteMeta.title}</title>
+    <meta name="description" content={siteMeta.description} />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="darkreader-lock" />
+    <meta property="og:title" content={siteMeta.title} />
+    <meta property="og:description" content={siteMeta.description} />
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <Background />
