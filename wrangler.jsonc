@@ -1,7 +1,8 @@
 {
     "name": "binfo-link",
-    "compatibility_date": "2025-08-09",
+    "compatibility_date": "2025-08-20",
     "assets": {
-        "directory": "./dist"
+        "directory": "./dist",
+        "not_found_handling": "404-page"
     }
 }
