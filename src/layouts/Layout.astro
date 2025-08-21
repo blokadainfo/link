@@ -6,7 +6,7 @@ import Background from '../components/Background.astro';
 ---
 
 <!doctype html>
-<html lang={siteMeta.locale}>
+<html style="background-color: black;" lang={siteMeta.locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -15,6 +15,7 @@ import Background from '../components/Background.astro';
     <meta name="description" content={siteMeta.description} />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="darkreader-lock" />
+    <meta name="color-scheme" content="dark" />
     <meta property="og:title" content={siteMeta.title} />
     <meta property="og:description" content={siteMeta.description} />
     <meta property="og:type" content="website" />
