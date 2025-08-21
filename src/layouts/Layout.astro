@@ -18,6 +18,13 @@ import Background from '../components/Background.astro';
     <meta property="og:title" content={siteMeta.title} />
     <meta property="og:description" content={siteMeta.description} />
     <meta property="og:type" content="website" />
+    <link
+      rel="preload"
+      href="/fonts/Raleway.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
     <Background />
@@ -27,8 +34,17 @@ import Background from '../components/Background.astro';
 </html>
 
 <style>
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600 700;
+    font-display: swap;
+    src: url('/fonts/Raleway.woff2') format('woff2');
+  }
+
   html,
   body {
+    font-family: 'Raleway', sans-serif;
     background-color: black;
     margin: 0;
     width: 100svw;
@@ -36,7 +52,7 @@ import Background from '../components/Background.astro';
 
     /* intro fade-in animation props */
     opacity: 0;
-    animation: fadeIn 0.8s ease-in-out forwards;
+    animation: fadeIn 1s ease-in-out forwards;
   }
 
   @keyframes fadeIn {
