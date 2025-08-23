@@ -5,18 +5,27 @@ import ThreadsIcon from '../assets/icons/threads.svg';
 import SiteIcon from '../assets/icons/generic-website.svg';
 import EmailIcon from '../assets/icons/email-alt.svg';
 
+/**
+ * PlatformData: Structure for a platform's button/link.
+ * - href: String. The URL or mailto link to open.
+ * - text: String. The label shown on the button.
+ * - icon: Any. The imported SVG/icon to display.
+ */
 export interface PlatformData {
   href: string;
   text: string;
   icon: any;
 }
 
-export const socialPlatforms: Record<string, PlatformData> = {
+export const contactPlatforms: Record<string, PlatformData> = {
   email: {
     href: 'mailto:kontakt@blokada.info',
     text: 'Email',
     icon: EmailIcon,
   },
+};
+
+export const socialPlatforms: Record<string, PlatformData> = {
   website: {
     href: 'https://www.blokada.info',
     text: 'Blokada INFO',

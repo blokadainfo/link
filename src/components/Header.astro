@@ -1,33 +1,45 @@
+---
+import { siteLook } from '../config/site.ts';
+---
+
 <!-- Header -->
 <div
   class="px-4 sm:px-6 pt-4 sm:pt-4 pb-5 lg:pb-0 z-10 hidden min-[200px]:flex justify-between items-center"
 >
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 425.2 425.2"
-    class="hidden min-[200px]:block size-20 md:size-24 fill-white"
-  >
-    <g>
-      <circle cx="196.49" cy="89.83" r="31.9"></circle>
-      <path
-        d="M155.57,367.26H56.79V260.26h40.02c32.45,0,58.75,26.3,58.75,58.75V367.26z"
-      ></path>
-      <path
-        d="M95.89,245.09h-39.1v-78.2h39.1c21.59,0,39.1,17.5,39.1,39.1S117.49,245.09,95.89,245.09z"
-      ></path>
-      <polygon points="368.4,62.39 266.55,112.62 266.55,304.86 368.4,355.13"
-      ></polygon>
-      <polygon points="161.17,164.59 161.25,252.9 245.28,294.37 245.28,123.11"
-      ></polygon>
-    </g>
-  </svg>
+  {
+    siteLook.logo ? (
+      siteLook.logoSrc ? (
+        <img
+          src={siteLook.logoSrc}
+          alt="Logo"
+          class="hidden min-[200px]:block size-20 md:size-24"
+        />
+      ) : (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 425.2 425.2"
+          class="hidden min-[200px]:block size-20 md:size-24 fill-white"
+        >
+          <g>
+            <circle cx="196.49" cy="89.83" r="31.9" />
+            <path d="M155.57,367.26H56.79V260.26h40.02c32.45,0,58.75,26.3,58.75,58.75V367.26z" />
+            <path d="M95.89,245.09h-39.1v-78.2h39.1c21.59,0,39.1,17.5,39.1,39.1S117.49,245.09,95.89,245.09z" />
+            <polygon points="368.4,62.39 266.55,112.62 266.55,304.86 368.4,355.13" />
+            <polygon points="161.17,164.59 161.25,252.9 245.28,294.37 245.28,123.11" />
+          </g>
+        </svg>
+      )
+    ) : (
+      <div />
+    )
+  }
   <div class="flex justify-center items-center gap-2">
     <div
       id="popup"
       class="opacity-0 transition-opacity duration-300 select-none pointer-events-none"
     >
       <span class="text-sm min-[320px]:text-md font-bold text-white">
-        Kopiran URL
+        {siteLook.popUpTxt}
       </span>
     </div>
     <svg

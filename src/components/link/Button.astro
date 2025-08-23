@@ -1,15 +1,29 @@
 ---
-import { socialPlatforms } from '../../config/socials';
-import ErrorIcon from '../../assets/icons/generic-website.svg';
+import { contactPlatforms, socialPlatforms } from '../../config/socials';
+import ErrorIcon from '../../assets/icons/error.svg';
 
-const { platform = '', ...props } = Astro.props;
+const { platform = '', type = 'social', ...props } = Astro.props;
 
+const platforms = type === 'contact' ? contactPlatforms : socialPlatforms;
 const platformKey = platform.toLowerCase();
-const platformData = socialPlatforms[platformKey] ?? {
+const platformDataRaw = platforms[platformKey];
+
+const platformError = {
   href: '#error',
   text: 'Error',
   icon: ErrorIcon,
 };
+
+const isNonEmptyString = (val: any) =>
+  typeof val === 'string' && val.trim() !== '';
+
+const isValidPlatformData =
+  platformDataRaw &&
+  isNonEmptyString(platformDataRaw.href) &&
+  isNonEmptyString(platformDataRaw.text) &&
+  platformDataRaw.icon;
+
+const platformData = isValidPlatformData ? platformDataRaw : platformError;
 ---
 
 <a
@@ -21,7 +35,7 @@ const platformData = socialPlatforms[platformKey] ?? {
 >
   <span
     aria-hidden="true"
-    class={`absolute inset-0 rounded-full transition-colors button ${platformKey}`}
+    class={`button absolute inset-0 rounded-full transition-colors ${platformKey}`}
     style="filter: blur(1px);"
   >
   </span>
@@ -43,6 +57,10 @@ const platformData = socialPlatforms[platformKey] ?? {
 </a>
 
 <style>
+  span.button {
+    background-color: black;
+  }
+
   a.button {
     transition: opacity 0.3s ease;
   }
@@ -79,8 +97,7 @@ const platformData = socialPlatforms[platformKey] ?? {
     background-color: #1877f2;
   }
 
-  span.threads,
-  span.email {
+  span.threads {
     background-color: black;
   }
 </style>

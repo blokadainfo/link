@@ -6,9 +6,11 @@ Live demo at: [link.blokada.info](https://link.blokada.info)
 
 ## Link Setup
 
-1. Add a link to [`socials.ts`](/src/config/socials.ts);
-2. If needed, extend [`Button.astro`](/src/components/link/Button.astro) with the platform type you need;
-3. Include the wanted button in the button list located in [`Foreground.astro`](/src/components/Foreground.astro).
+1. To add a new link:
+   - For a **social network**, add it to the `socialPlatforms` object in [`socials.ts`](/src/config/socials.ts).
+   - For a **contact link** (e.g. email), add it to the `contactPlatforms` object in [`socials.ts`](/src/config/socials.ts).
+
+2. (Optional) To customize the button’s appearance for a specific platform, add or update its brand color in the `<style>` section of [`Button.astro`](/src/components/link/Button.astro).
 
 Congrats, you're done! 🎉
 
@@ -16,9 +18,7 @@ Congrats, you're done! 🎉
 
 You can easily fork and customize this page, the entire thing is quite simple really. There's not much to change.
 
-Check out the [`site.ts`](/src/config/site.ts) config file, where all the recommended customizable properties are clearly listed.
-
-The first `<svg>` you’ll stumble upon in [`Header.astro`](/src/components/Header.astro) is the logo displayed in the upper-left corner of the webpage. You can delete it or replace it with something else.
+Check out the [`site.ts`](/src/config/site.ts) config file, where all the recommended customizable properties are clearly listed. You don't have to touch the components themselves at all.
 
 ## License
 
