@@ -1,7 +1,7 @@
 {
   "recommendations": [
-    "esbenp.prettier-vscode",       // Prettier code formatter
-    "bradlc.vscode-tailwindcss",    // Tailwind CSS IntelliSense
-    "astro-build.astro-vscode",     // Astro language support
+    "esbenp.prettier-vscode", // Prettier code formatter
+    "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense
+    "astro-build.astro-vscode" // Astro language support
   ]
 }
