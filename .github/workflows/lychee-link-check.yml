@@ -1,0 +1,31 @@
+name: Link Check
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: '00 18 * * *'
+
+jobs:
+  lychee-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Site
+        run: pnpm build
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose '*.html'
+          fail: true
+          workingDirectory: ./dist
