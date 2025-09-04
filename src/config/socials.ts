@@ -4,6 +4,7 @@ import InstagramIcon from '../assets/icons/instagram.svg';
 import ThreadsIcon from '../assets/icons/threads.svg';
 import SiteIcon from '../assets/icons/generic-website.svg';
 import EmailIcon from '../assets/icons/email-alt.svg';
+import DonateIcon from '../assets/icons/donate.svg';
 
 /**
  * PlatformData: Structure for a platform's button/link.
@@ -22,6 +23,11 @@ export const contactPlatforms: Record<string, PlatformData> = {
     href: 'mailto:kontakt@blokada.info',
     text: 'Email',
     icon: EmailIcon,
+  },
+  donate: {
+    href: 'https://www.blokada.info/donacije',
+    text: 'Podrži Nas',
+    icon: DonateIcon,
   },
 };
 
@@ -46,9 +52,11 @@ export const socialPlatforms: Record<string, PlatformData> = {
     text: 'Facebook',
     icon: FacebookIcon,
   },
+  /*
   threads: {
     href: 'https://www.threads.com/@blokada.info',
     text: 'Threads',
     icon: ThreadsIcon,
   },
+  */
 };
