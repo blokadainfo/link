@@ -11,6 +11,7 @@ Live demo at: [link.blokada.info](https://link.blokada.info)
 1. To add a new link:
    - For a **social network**, add it to the `socialPlatforms` object in [`socials.ts`](/src/config/socials.ts).
    - For a **contact link** (e.g. email), add it to the `contactPlatforms` object in [`socials.ts`](/src/config/socials.ts).
+   - For a **donation type** (e.g. donation instructions, platforms etc.), add it to the `donatePlatforms` object in [`socials.ts`](/src/config/socials.ts).
 
 2. (Optional) To customize the button’s appearance for a specific platform, add or update its brand color in the `<style>` section of [`Button.astro`](/src/components/link/Button.astro).
 
