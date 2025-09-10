@@ -21,7 +21,14 @@ import Background from '../components/Background.astro';
     <meta property="og:type" content="website" />
     <link
       rel="preload"
-      href="/fonts/Raleway.woff2"
+      href="/fonts/Raleway-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Raleway-SemiBold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -38,9 +45,14 @@ import Background from '../components/Background.astro';
   @font-face {
     font-family: 'Raleway';
     font-style: normal;
-    font-weight: 600 700;
     font-display: swap;
-    src: url('/fonts/Raleway.woff2') format('woff2');
+    src: url('/fonts/Raleway-Medium.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Raleway-SemiBold.woff2') format('woff2');
   }
 
   html,
