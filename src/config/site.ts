@@ -26,5 +26,6 @@ export const siteLook = {
   logoSrc: '', // e.g. '/favicon.svg'
   popUpTxt: 'Kopiran URL',
   socialsHeading: 'Tu smo da budemo svetlo u medijskom mraku.',
-  contactHeading: '', // e.g. 'Cenimo različita mišljenja, slobodno nam pošaljte mejl:'
+  contactHeading: 'Cenimo vaša mišljenja, slobodno nas kontaktirajte.',
+  donateHeading: 'Ako želite da podržite naš rad, možete donirati:',
 };

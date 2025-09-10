@@ -1,6 +1,7 @@
 import YouTubeIcon from '../assets/icons/youtube.svg';
 import FacebookIcon from '../assets/icons/facebook.svg';
 import InstagramIcon from '../assets/icons/instagram.svg';
+import TwitterIcon from '../assets/icons/x.svg';
 import ThreadsIcon from '../assets/icons/threads.svg';
 import SiteIcon from '../assets/icons/generic-website.svg';
 import EmailIcon from '../assets/icons/email-alt.svg';
@@ -24,9 +25,12 @@ export const contactPlatforms: Record<string, PlatformData> = {
     text: 'Email',
     icon: EmailIcon,
   },
+};
+
+export const donatePlatforms: Record<string, PlatformData> = {
   donate: {
     href: 'https://www.blokada.info/donacije',
-    text: 'Podrži Nas',
+    text: 'Donirajte',
     icon: DonateIcon,
   },
 };
@@ -52,11 +56,14 @@ export const socialPlatforms: Record<string, PlatformData> = {
     text: 'Facebook',
     icon: FacebookIcon,
   },
-  /*
+  twitter: {
+    href: 'https://x.com/blokada_info',
+    text: 'Twitter / X',
+    icon: TwitterIcon,
+  },
   threads: {
     href: 'https://www.threads.com/@blokada.info',
     text: 'Threads',
     icon: ThreadsIcon,
   },
-  */
 };

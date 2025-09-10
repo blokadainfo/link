@@ -1,11 +1,17 @@
 ---
 import { siteLook } from '../config/site';
-import { contactPlatforms, socialPlatforms } from '../config/socials';
+import {
+  contactPlatforms,
+  socialPlatforms,
+  donatePlatforms,
+} from '../config/socials';
 import Button from './link/Button.astro';
+import Scroll from './Scroll.astro';
 ---
 
-<div class="pb-5 pt-5 min-[200px]:pt-0 flex items-center justify-center">
+<div class="pb-24 pt-5 min-[200px]:pt-0 flex items-center justify-center">
   <div class="mx-4 min-[350px]:mx-10 max-w-80 flex flex-col items-center gap-4">
+    <Scroll />
     {
       siteLook.socialsHeading && (
         <p class="text-center text-balance text-lg min-[350px]:text-xl font-medium text-white select-none">
@@ -28,6 +34,18 @@ import Button from './link/Button.astro';
     {
       Object.keys(contactPlatforms).map((platform) => (
         <Button platform={platform} type="contact" />
+      ))
+    }
+    {
+      siteLook.donateHeading && (
+        <p class="text-center text-balance text-lg min-[350px]:text-xl font-medium text-white select-none">
+          {siteLook.donateHeading}
+        </p>
+      )
+    }
+    {
+      Object.keys(donatePlatforms).map((platform) => (
+        <Button platform={platform} type="donate" />
       ))
     }
   </div>

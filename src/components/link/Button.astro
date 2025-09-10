@@ -1,10 +1,19 @@
 ---
-import { contactPlatforms, socialPlatforms } from '../../config/socials';
+import {
+  contactPlatforms,
+  socialPlatforms,
+  donatePlatforms,
+} from '../../config/socials';
 import ErrorIcon from '../../assets/icons/error.svg';
 
 const { platform = '', type = 'social', ...props } = Astro.props;
 
-const platforms = type === 'contact' ? contactPlatforms : socialPlatforms;
+const platforms =
+  type === 'contact'
+    ? contactPlatforms
+    : type === 'donate'
+      ? donatePlatforms
+      : socialPlatforms;
 const platformKey = platform.toLowerCase();
 const platformDataRaw = platforms[platformKey];
 
