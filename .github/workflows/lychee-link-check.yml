@@ -10,20 +10,20 @@ jobs:
   lychee-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 10
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm i --frozen-lockfile
 
-      - name: Build Site
-        run: pnpm build
+      - name: Build
+        run: pnpm run build
 
-      - name: Link Checker
+      - name: Link check
         uses: lycheeverse/lychee-action@v2
         with:
           args: --verbose '*.html'
