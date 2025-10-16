@@ -6,47 +6,66 @@ import {
   donatePlatforms,
 } from '../config/socials';
 import Button from './link/Button.astro';
-import Scroll from './Scroll.astro';
+
+const items = [
+  ...Object.keys(socialPlatforms).map((platform) => ({
+    platform,
+    type: 'social',
+  })),
+  ...Object.keys(contactPlatforms).map((platform) => ({
+    platform,
+    type: 'contact',
+  })),
+  ...Object.keys(donatePlatforms).map((platform) => ({
+    platform,
+    type: 'donate',
+  })),
+];
+
+const count = items.length;
+const isOdd = count % 2 === 1;
+const half = Math.floor(count / 2);
+const left = items.slice(0, half);
+const right = items.slice(half, isOdd ? count - 1 : count);
+const lastOddItem = isOdd ? items[count - 1] : null;
 ---
 
-<div class="pb-24 pt-5 min-[200px]:pt-0 flex items-center justify-center">
-  <div class="mx-4 min-[350px]:mx-10 max-w-80 flex flex-col items-center gap-4">
-    <Scroll />
+<div class="h-2/3 min-[200px]:pt-0 flex items-center justify-center">
+  <div class="mx-4 min-[350px]:mx-10 w-full max-w-3xl">
     {
-      siteLook.socialsHeading && (
-        <p class="text-center text-balance text-lg min-[350px]:text-xl font-medium text-white select-none">
-          {siteLook.socialsHeading}
-        </p>
-      )
+      siteLook.socialsHeading &&
+        siteLook.contactHeading &&
+        siteLook.donateHeading && (
+          <p class="mb-6 text-center text-balance text-lg min-[350px]:text-xl font-medium text-white select-none">
+            {siteLook.socialsHeading}
+          </p>
+        )
     }
-    {
-      Object.keys(socialPlatforms).map((platform) => (
-        <Button platform={platform} type="social" />
-      ))
-    }
-    {
-      siteLook.contactHeading && (
-        <p class="text-center text-balance text-lg min-[350px]:text-xl font-medium text-white select-none">
-          {siteLook.contactHeading}
-        </p>
-      )
-    }
-    {
-      Object.keys(contactPlatforms).map((platform) => (
-        <Button platform={platform} type="contact" />
-      ))
-    }
-    {
-      siteLook.donateHeading && (
-        <p class="text-center text-balance text-lg min-[350px]:text-xl font-medium text-white select-none">
-          {siteLook.donateHeading}
-        </p>
-      )
-    }
-    {
-      Object.keys(donatePlatforms).map((platform) => (
-        <Button platform={platform} type="donate" />
-      ))
-    }
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
+      <div class="flex flex-col gap-3">
+        {
+          left.map((item) => (
+            <Button platform={item.platform} type={item.type} />
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col gap-3">
+        {
+          right.map((item) => (
+            <Button platform={item.platform} type={item.type} />
+          ))
+        }
+      </div>
+
+      {
+        lastOddItem && (
+          <div class="sm:col-span-2">
+            <Button platform={lastOddItem.platform} type={lastOddItem.type} />
+          </div>
+        )
+      }
+    </div>
   </div>
 </div>

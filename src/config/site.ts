@@ -25,7 +25,7 @@ export const siteLook = {
   logo: true,
   logoSrc: '', // e.g. '/favicon.svg'
   popUpTxt: 'Kopiran URL',
-  socialsHeading: 'Tu smo da budemo svetlo u medijskom mraku.',
-  contactHeading: 'Cenimo vaša mišljenja, slobodno nas kontaktirajte:',
-  donateHeading: 'Ako želite da podržite naš rad, možete donirati:',
+  socialsHeading: '', // e.g. 'Tu smo da budemo svetlo u medijskom mraku.'
+  contactHeading: '', // e.g. 'Cenimo vaša mišljenja, slobodno nas kontaktirajte:'
+  donateHeading: '', // e.g. 'Ako želite da podržite naš rad, možete donirati:'
 };
