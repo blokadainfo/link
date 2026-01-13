@@ -8,17 +8,17 @@ import {
 import Button from './link/Button.astro';
 
 const items = [
-  ...Object.keys(socialPlatforms).map((platform) => ({
+  ...Object.keys(donatePlatforms).map((platform) => ({
     platform,
-    type: 'social',
+    type: 'donate',
   })),
   ...Object.keys(contactPlatforms).map((platform) => ({
     platform,
     type: 'contact',
   })),
-  ...Object.keys(donatePlatforms).map((platform) => ({
+  ...Object.keys(socialPlatforms).map((platform) => ({
     platform,
-    type: 'donate',
+    type: 'social',
   })),
 ];
 
