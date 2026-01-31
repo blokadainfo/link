@@ -28,16 +28,11 @@ export const contactPlatforms: Record<string, PlatformData> = {
 };
 
 export const donatePlatforms: Record<string, PlatformData> = {
-  /*donate: {
+  donate: {
     href: 'https://www.blokada.info/donacije',
     text: 'Donirajte',
     icon: DonateIcon,
-  },*/
-  donate: {
-    href: 'https://stat.blokada.info/q/CQcQ6Zo0m',
-    text: 'Anketa',
-    icon: DonateIcon,
-  }
+  },
 };
 
 export const socialPlatforms: Record<string, PlatformData> = {
