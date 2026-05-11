@@ -1,0 +1,39 @@
+---
+import { siteMeta } from '../config/site';
+import { socialPlatforms, type PlatformData } from '../config/socials';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return Object.entries(socialPlatforms).map(([platform, data]) => ({
+    params: { platform },
+    props: { platform, data },
+  }));
+}
+
+const { data } = Astro.props as { data: PlatformData };
+
+const destination = data.href;
+const title = `${data.text} | ${siteMeta.title}`;
+const redirectScript = `window.location.replace(${JSON.stringify(destination)});`;
+---
+
+<!doctype html>
+<html lang={siteMeta.locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex,follow" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <link rel="canonical" href={destination} />
+    <title>{title}</title>
+    <script is:inline set:html={redirectScript}></script>
+  </head>
+  <body>
+    <main>
+      <p>
+        <a href={destination} rel="noopener noreferrer">{data.text}</a>.
+      </p>
+    </main>
+  </body>
+</html>

@@ -8,10 +8,12 @@ import {
 import Button from './link/Button.astro';
 
 const items = [
-  ...Object.keys(socialPlatforms).map((platform) => ({
-    platform,
-    type: 'social',
-  })),
+  ...Object.entries(socialPlatforms)
+    .filter(([, data]) => data.render !== false)
+    .map(([platform]) => ({
+      platform,
+      type: 'social',
+    })),
   ...Object.keys(contactPlatforms).map((platform) => ({
     platform,
     type: 'contact',

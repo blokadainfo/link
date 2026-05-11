@@ -12,11 +12,14 @@ import DonateIcon from '../assets/icons/donate.svg';
  * - href: String. The URL or mailto link to open.
  * - text: String. The label shown on the button.
  * - icon: Any. The imported SVG/icon to display.
+ * - render: Optional boolean. Set to false to keep a
+ *   redirect page without showing a button on the homepage.
  */
 export interface PlatformData {
   href: string;
   text: string;
   icon: any;
+  render?: boolean;
 }
 
 export const contactPlatforms: Record<string, PlatformData> = {
@@ -65,5 +68,11 @@ export const socialPlatforms: Record<string, PlatformData> = {
     href: 'https://www.threads.com/@blokada.info',
     text: 'Threads',
     icon: ThreadsIcon,
+  },
+  github: {
+    href: 'https://github.com/blokadainfo',
+    text: 'GitHub',
+    icon: null,
+    render: false,
   },
 };
