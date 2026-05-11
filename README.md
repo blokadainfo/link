@@ -1,6 +1,6 @@
 # Links, links, links!
 
-[![Link Check](https://github.com/studentinovisad/binfo-link/actions/workflows/lychee-link-check.yml/badge.svg)](https://github.com/studentinovisad/binfo-link/actions/workflows/lychee-link-check.yml)
+[![Link Check](https://github.com/blokadainfo/link/actions/workflows/lychee-link-check.yml/badge.svg)](https://github.com/blokadainfo/link/actions/workflows/lychee-link-check.yml)
 
 Want to show off your links? We've got you covered! ❤️
 
