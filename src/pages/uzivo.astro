@@ -1,0 +1,29 @@
+---
+import { siteMeta } from '../config/site';
+import { socialPlatforms } from '../config/socials';
+
+export const prerender = true;
+
+const youtubeUrl = socialPlatforms.youtube.href.replace(/\/$/, '');
+const destination = `${youtubeUrl}/live`;
+const title = `${siteMeta.title} | Uživo Prenos`;
+const redirectScript = `window.location.replace(${JSON.stringify(destination)});`;
+---
+
+<!doctype html>
+<html lang={siteMeta.locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex,follow" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <link rel="canonical" href={destination} />
+    <title>{title}</title>
+    <script is:inline set:html={redirectScript}></script>
+  </head>
+  <body>
+    <main>
+      <a href={destination} rel="noopener noreferrer">Blokada INFO | Uživo Prenos</a>.
+    </main>
+  </body>
+</html>
