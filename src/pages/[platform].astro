@@ -14,7 +14,7 @@ export function getStaticPaths() {
 const { data } = Astro.props as { data: PlatformData };
 
 const destination = data.href;
-const title = `${data.text} | ${siteMeta.title}`;
+const title = `${siteMeta.title} | ${data.text}`;
 const redirectScript = `window.location.replace(${JSON.stringify(destination)});`;
 ---
 
