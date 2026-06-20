@@ -4,7 +4,7 @@ import {
   socialPlatforms,
   donatePlatforms,
 } from '../../config/socials';
-import ErrorIcon from '../../assets/icons/error.svg';
+import { resolveIcon } from '../../config/icons';
 
 const { platform = '', type = 'social', ...props } = Astro.props;
 
@@ -20,10 +20,10 @@ const platformDataRaw = platforms[platformKey];
 const platformError = {
   href: '#error',
   text: 'Error',
-  icon: ErrorIcon,
+  icon: 'error',
 };
 
-const isNonEmptyString = (val: any) =>
+const isNonEmptyString = (val: unknown) =>
   typeof val === 'string' && val.trim() !== '';
 
 const isValidPlatformData =
@@ -33,6 +33,7 @@ const isValidPlatformData =
   platformDataRaw.icon;
 
 const platformData = isValidPlatformData ? platformDataRaw : platformError;
+const Icon = resolveIcon(platformData.icon);
 ---
 
 <a
@@ -57,9 +58,7 @@ const platformData = isValidPlatformData ? platformDataRaw : platformError;
     </span>
     <div class="flex justify-center items-center w-4 min-[320px]:w-8">
       {
-        platformData.icon && (
-          <platformData.icon class="size-4 min-[320px]:size-8" />
-        )
+        <Icon class="size-4 min-[320px]:size-8" />
       }
     </div>
   </span>
